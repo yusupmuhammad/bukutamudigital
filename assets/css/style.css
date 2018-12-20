@@ -1,0 +1,394 @@
+/*
+======  Normalize   ======
+*/
+*, *::before, *::after {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+html, body {
+    margin: 0;padding: 0;
+    width: 100%;
+}
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.25;
+    font-size: 16px;
+    height: 100%;
+}
+input, button, textarea {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+[hidden] {
+    display: none!important;
+}
+.title {
+    display: block;
+    font-size: 21px;
+    font-weight: normal;
+}
+.clearfix::before, .clearfix::after {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+/*
+============   Ma Border Style   ===========
+*/
+hr.ma-hr {
+	position: relative;
+	display: block;
+	margin: 10px 0 20px 0;
+	max-width: 250px;height: 2px;
+	background-color: #cbd9ff;
+    border-radius: 20px;
+    border: none;
+}
+hr.ma-hr:before {
+	content: "";
+    position: absolute;
+    top: 0;left: 0;
+	border-radius: 20px;
+	width: 40px;height: 2px;
+	background-color: #338fff;
+}
+.btn {
+    display: inline-block;
+    margin: 5px;padding: 10px 15px;
+    background: #eee;color: #555;
+    border: none;
+    cursor: pointer;
+    font-size: 14px!important;
+    text-decoration: none;
+}
+.btn:hover {
+    background: rgba(0,0,0,0.1);
+}
+.btn:active, .btn:focus {
+    outline: 2px solid rgba(200, 200, 200, 0.2);
+}
+.btn[disabled] {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+/*
+============   Overlay   ===========
+*/
+.overlay {
+    position: fixed;
+ 	top: 0;left: 0;right: 0;bottom: 0;
+    width: 100%;height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 100;
+}
+
+
+.undangan {
+    display: block;
+    float: right;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 10px 12px;
+    width: 250px;
+}
+/*
+======  Modal  ======
+*/
+
+.modal {
+    position: fixed;
+    top: 0;left: 0;right: 0;bottom: 0;
+    margin: auto;padding: 0;
+    background: #fff;
+    visibility: hidden;
+    overflow: hidden;
+    overflow-y: auto;
+    z-index: 101;
+}
+.modal.popup {
+	padding: 0 15px;
+	max-width: 320px;height: 220px;
+	-webkit-box-shadow: 0 0 24px 6px rgba(0,0,0,0.05);
+	box-shadow: 0 0 24px 6px rgba(0,0,0,0.05);
+}
+.modal.show {
+    visibility: visible;
+}
+.modal > .content {
+    position: relative;
+    display: block;
+    width: 100%;height: 100%;
+}
+.modal.animate {
+	-webkit-transition: all .3s linear;
+	   -moz-transition: all .3s linear;
+			transition: all .3s linear;
+}
+.modal.scale {
+	-webkit-animation: scaleOut .3s linear;
+	   -moz-animation: scaleOut .3s linear;
+			animation: scaleOut .3s linear;
+}
+.modal.show.scale {
+	-webkit-animation: scaleIn .3s linear;
+	   -moz-animation: scaleIn .3s linear;
+			animation: scaleIn .3s linear;
+}
+@keyframes scaleIn {
+	from {
+		opacity: 0;
+		transform: scale(.8);
+	}
+	50% {
+		opacity: 1;
+	}
+}
+@keyframes scaleOut {
+	from {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+		transform: scale(.8);
+	}
+	to {
+		opacity: 0;
+	}
+}
+.form-editable {
+    width: 100%;max-width: 500px;
+    height: 100%;
+    border-radius: 4px;
+}
+.modal-content {
+    position: relative;
+    width: 100%;
+}
+.form-editable .header {
+    display: block;
+    width: 100%;height: 50px;
+    border-bottom: 2px solid #eff1fc;
+    text-align: center;
+    line-height: 40px;
+}
+.form-editable form {
+    display: block;
+    padding: 15px;
+    width: 100%;
+}
+.input-control {
+    position: relative;
+    display: inline-block;
+    margin: 0;padding: 10px 15px;
+    width: 100%;
+    clear: both;
+}
+.input-control > label {
+    display: block;float: left;
+    line-height: 40px;
+}
+.input-control > input, .input-control > textarea {
+    display: block;float: right;
+    outline: none;border: 1px solid #ccc;
+    padding: 10px 12px;
+    width: 250px;
+}
+.input-control > input:focus, .input-control > textarea:focus {
+    box-shadow: 0 0 0 2px #ebebeb;
+}
+.input-control > textarea {
+    height: 120px;
+    resize: none;
+}
+@media only screen and (min-width: 992px) {
+    .form-editable {
+        height: 550px;
+    }
+}
+.cn-navigation {
+    position: relative;
+    display: block;
+    margin: 0;padding: 0 15px;
+    width: 100%;height: 80px;
+    text-align: center;
+    border-bottom: 2px solid #eff1fc;
+}
+.cn-navigation > .cn-brand {
+    float: left;
+}
+.cn-navigation > .cn-app-name {
+    position: absolute;
+    top: 0;left: 0;right: 0;bottom: 0;
+    margin: auto;
+}
+.cn-navigation > .cn-app-name > * {
+    font-weight: normal;
+    color: #3a91f5;
+}
+.cn-navigation > .cn-time {
+    float: right;
+}
+.cn-sidemenu {
+    position: relative;
+    display: block;float: left;
+    width: 100%;max-width: 300px;
+}
+.cn-sidemenu > .header {
+    display: block;
+    margin: 0;padding: 0 15px;
+    width: 100%;height: 55px;
+    line-height: 55px;
+    border-bottom: 2px solid #eff1fc;
+    cursor: pointer;
+}
+.iconic {
+    float: right;
+    font-size: 28px;
+    color: #3a91f5;
+}
+.cn-sidemenu > .table-menus {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    color: #555;
+    border-spacing: 0;
+}
+.cn-sidemenu > .table-menus th, .cn-sidemenu > .table-menus td {
+    padding: 10px;
+}
+.cn-sidemenu > .table-menus th {
+    padding: 10px;
+    font-weight: normal;
+    font-size: 12px;
+    color: #abaec7;
+    text-align: left;
+}
+.cn-sidemenu > .table-menus tr:hover td {
+    background: rgba(53, 53, 54, 0.1);
+}
+.love {
+    font-size: 120%;
+    color: #ff4954;
+}
+.place-left {
+    float: left;
+}
+.place-right {
+    float: right;
+}
+.no-bold {
+    font-weight: normal;
+}
+.align-center {
+    text-align: center;
+}
+.cn-main-content {
+    position: relative;
+    display: block;float: left;
+    margin: 0;padding: 15px;
+    width: 100%;height: 100%;
+    border-width: 0 0 2px 2px;
+    border-style: solid;
+    border-color: #eff1fc;
+}
+.cn-data-tables {
+    position: relative;
+    width: 100%;
+    font-size: 14px;
+    border-spacing: 0;
+}
+.cn-data-tables tbody tr {
+    display: table-row;
+    background: #f4f6fa;
+    cursor: pointer;
+}
+.cn-data-tables tbody tr.selected, .cn-data-tables tbody tr:hover {
+    background: #abe0f8b7;
+}
+.cn-data-tables tr th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: normal;
+    outline: none;
+}
+.cn-data-tables tr td {
+    padding: 10px 15px;
+    color: #555;
+    border-top: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+}
+.cn-data-tables tr td:first-child {
+    border-radius: 6px 0 0 6px;
+    color: #3a91f5;
+}
+.cn-data-tables tr td:last-child {
+    border-radius: 0 6px 6px 0;
+}
+.cn-footer {
+    position: relative;
+    display: block;
+    margin: 0;padding: 5px 15px;
+    width: 100%;
+    clear: both;
+}
+.bg-red {
+    background: #ff4954;color: #fff;
+}
+.bg-blue {
+    background: #3a91f5;color: #fff;
+}
+.bg-red:hover {
+    background: #f33a46;
+}
+.bg-blue:hover {
+    background: #2d86ec;
+}
+.btn.bg-red:active, .btn.bg-red:focus {
+    outline-color: rgba(255, 73, 85, 0.5);
+}
+.btn.bg-blue:active, .btn.bg-blue:focus {
+    outline-color: rgba(58, 145, 245, 0.5);
+}
+@media only screen and (min-width: 992px) {
+    .cn-main-content {
+        width: calc(100% - 300px);
+    }
+    .cn-sidemenu {
+        width: 300px;
+    }
+}
+/*
+======  Data Tables  ======
+*/
+.dataTables_wrapper {
+    margin: 15px 0;
+    overflow-x: auto;
+}
+.dataTables_length {
+    display: block;float: left;
+}
+.dataTables_filter {
+    display: block;float: right;
+}
+.dataTables_info {
+    display: block;float: left;
+    margin: 10px 0;
+}
+.dataTables_paginate {
+    display: block;float: right;
+    margin: 10px 0;
+}
+.dataTables_paginate a {
+    outline: none;
+    cursor: pointer;
+}
+.dataTables_paginate [class^="paginate_disabled"] {
+    cursor: not-allowed;
+}
+.btn-paginate {
+    display: inline-block;
+    margin: 0 5px;padding: 10px 15px;
+    background: #eee;
+}
